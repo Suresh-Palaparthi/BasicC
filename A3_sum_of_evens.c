@@ -7,27 +7,23 @@ int main()
 
     // Let us take the input from the user first
 
-    printf("Enter the N value:");
+    printf("Enter a positive integer N:");
     scanf("%d", &N);
 
-    // Here I've considered N as inclusive. So, N will also be considered if it is even.
-    for (i = 1; i <= N; i++)
+    // validating N value. It cannot be negative.
+    if (N < 1)
     {
+        printf("Please enter a positive number");
+        return 1; // to indicate that there  is an error and to terminate the program.
+    }
 
-        // let us use an if statement to consider only the even numbers. (i%2 ==0 is true only when i is even.)
-        if (i % 2 == 0)
-        {
-            sum += i;
-        }
-    }
-    // I used an if else to give the output more clearly.
-    if (N % 2 == 0)
+    // Here I've considered N as inclusive. So, N will also be considered if it is even.
+    for (i = 2; i <= N; i = i + 2)
     {
-        printf("The sum of even numbers between 1 and %d (%d included) is : %d", N, N, sum);
+        // let us add each iteration value to the 'sum' variable
+        sum += i;
     }
-    else
-    {
-        printf("The sum of even numbers between 1 and %d is : %d", N, sum);
-    }
+    printf("The sum of even numbers between 1 and %d is : %d", N, sum);
+
     return 0;
 }

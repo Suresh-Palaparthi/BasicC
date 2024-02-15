@@ -18,7 +18,7 @@ int main()
     }
 
     // Here I've considered N as inclusive. So, N will also be considered if it is even.
-    for (i = 2; i <= N; i = i + 2)
+    for (i = 2; i <= N; i += 2)
     {
         // let us add each iteration value to the 'sum' variable
         sum += i;
